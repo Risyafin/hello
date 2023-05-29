@@ -45,4 +45,5 @@ func main() {
 		fmt.Scan(&choice)
 
 	}
+	fmt.Println("Terima kasih")
 }
