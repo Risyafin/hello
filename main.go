@@ -1,28 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
-func Penjumlahan(a int, b int) int {
-	return a + b
+func Penjumlahan(a float64, b float64) float64 {
+	 c := a + b
+	 return c
 }
-func Pengurangan(a int, b int) int {
+func Pengurangan(a float64, b float64) float64 {
 	return a - b
 }
-func Perkalian(a int, b int) int {
+func Perkalian(a float64, b float64) float64 {
 	return a * b
 }
 
-func pembagian(a int, b int) int {
+func pembagian(a float64, b float64) float64 {
 	return a / b
 }
 
 func main() {
-	var numberOne int
+	var numberOne, numberTwo float64
 	var Operator string
-	var numberTwo int
-	var choice = "y"
+	var bool bool
+	var choice string
 	fmt.Println("---- Selamat datang di Kalkulator Sederhana ----")
-	for choice == "y" {
+	for bool == false {
 		fmt.Print("Masukka bilangan pertama : ")
 		fmt.Scan(&numberOne)
 		fmt.Print("Masukkan operator : ")
@@ -40,9 +44,11 @@ func main() {
 		} else {
 			fmt.Println("Operator yang anda masukkan salah")
 		}
-		choice = "t"
 		fmt.Println("Apakah anda ingin menggunakan kalkulator lagi ? (y/t)")
 		fmt.Scan(&choice)
+		if strings.ToUpper(choice) == "T" {
+			break
+		}
 
 	}
 	fmt.Println("Terima kasih")
